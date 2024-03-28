@@ -1,0 +1,37 @@
+﻿@page "/"
+
+@inject ThemeService service
+
+
+<PageTitle>Theme Switcher</PageTitle>
+
+<h1>Hello @(service.IsDarkTheme ? "dark" : "light") Theme</h1>
+
+<button class="btn btn-primary" @onclick="ToggleTheme">Toggle Theme</button>
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //Set the theme
+            service.IsDarkTheme = await service.IsThemeDark();
+            //Listen for theme change
+            await service.ListenForThemeChanged();
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        //If the theme changed, re-render the component
+        service.OnChange += StateHasChanged;
+    }
+
+
+    private void ToggleTheme()
+    {
+        //If the theme is dark, set it to light and vice versa
+        service.IsDarkTheme = !service.IsDarkTheme;        
+    }
+}
