@@ -1,6 +1,6 @@
 # Bootstrap Dark Theme Switcher
 
-This code is to show how to implement a switcher for Dark Mode in Bootstrap 5.3 using the new data-bs-them attribute.  It also covers using the browsser default dark mode setting and dynamically switching modes if the browser setting change.
+This code is to show how to implement a switcher for Dark Mode in Bootstrap 5.3 using the new data-bs-theme attribute.  It also covers using the browser default dark mode setting and dynamically switching modes if the browser setting changes.
 
 by [David Gallivan](http://twitter.com/CodingwithDavid)
 
@@ -24,9 +24,9 @@ a.	With Visual Code you will need to install the C# extensions
 There are several Blazor concepts that are highlighted in this project.
 1. Using a service to manage state
 2. Handling Click events
-3. Calling Javascipt from C#
+3. Calling Javascript from C#
 4. Calling C# from Javascript
-5. Using Javascirpt to add and remove data attributes
+5. Using Javascript to add and remove data attributes
 6. Handllilng events in C# and in Javascirpt.
 
 
